@@ -15,7 +15,7 @@
 
 - 下载代码到本地 git clone https://github.com/katherine0325/coupon-api.git
 - 启动mongo：make run_mongo(in linux), docker start mongodb(in windows)
-- 启动项目：make start(in linux), node src/server.js(in windows)。出现http://localhost:3000即启动成功
+- 启动项目：make start(in linux), node src/server.js(in windows)。出现 http://localhost:3000 即启动成功
 
 
 ## api
@@ -31,6 +31,23 @@ GET /api/list/list
 header: {
     Authorization: Bearer + token
 }
+
+- 新增一条清单数据
+POST /api/list/create
+header: {
+    Authorization: Bearer + token
+},
+body: {
+    name: 'xxx',
+    price: 0.00,
+    url: 'http://www.xxx.com/xxx'
+}
+
+
+## 如何新增一个api
+
+- src/router.js 新require一个文件，并且新增一个路由地址
+- src/controller.js 新增一个controller文件，并模仿其他的controller.js 新增一个 class
 
 
 

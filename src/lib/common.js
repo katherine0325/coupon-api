@@ -13,8 +13,8 @@ const Res = controller => {
         try {
             return ctx.body = await controller(ctx);
         } catch(e) {
-            console.error(e)
-            return ctx.body = e.message;
+            // 这里可以写online日志
+            throw e;
         }
     }
 }
