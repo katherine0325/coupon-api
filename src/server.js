@@ -10,7 +10,7 @@ mongoose.connect(`mongodb://${config.mongo.host}:${config.mongo.port}/${config.m
 app.use(bodyParser())
 
 app
-  .use(jwtKoa({secret: config.jwtKey}).unless({ path: [/^\/api\/user\/login/]}))
+  .use(jwtKoa({secret: config.jwtKey}).unless({ path: [/^\/api\/user\/login/, /\//]}))
   .use(router.routes())
   .use(router.allowedMethods())
 
