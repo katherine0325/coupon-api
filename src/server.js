@@ -5,7 +5,7 @@ const router = require('./router');
 const bodyParser = require('koa-bodyparser');
 const config = require('./config');
 const mongoose = require('mongoose');
-mongoose.connect(`mongodb://katherine2:katherine03252@${config.mongo.host}:${config.mongo.port}/${config.mongo.name}?authSource=coupon`, { useNewUrlParser: true });
+mongoose.connect(`mongodb://${config.mongo.username}:${config.mongo.password}@${config.mongo.host}:${config.mongo.port}/${config.mongo.dbname}`, { useNewUrlParser: true });
 
 app.use(bodyParser())
 
