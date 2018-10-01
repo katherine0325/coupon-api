@@ -4,7 +4,7 @@ class Index {
     }
 
     index(ctx) {
-        return ctx.body = 'coupon api is running';
+        return 'coupon api is running \n';
     }
 }
 

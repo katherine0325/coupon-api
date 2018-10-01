@@ -14,6 +14,6 @@ app
   .use(router.routes())
   .use(router.allowedMethods())
 
-app.listen(config.port);
+app.listen(config.port, '0.0.0.0');
 console.log(config.host + ':' + config.port);
 

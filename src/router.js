@@ -5,7 +5,7 @@ const index = require('./controller/index');
 const user = require('./controller/user');
 const list = require('./controller/list');
 
-router.get('/', index.index);
+router.get('/', Res(index.index));
 
 router.post('/api/user/login', Res(user.login));
 
