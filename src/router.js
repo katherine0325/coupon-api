@@ -11,5 +11,6 @@ router.post('/api/user/login', Res(user.login));
 
 router.get('/api/list/list', Res(list.getList));
 router.post('/api/list/create', Res(list.createList));
+router.get('/api/list/createEmpty', Res(list.createEmptyData));
 
 module.exports = router;

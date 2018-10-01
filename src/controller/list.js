@@ -7,7 +7,7 @@ class List {
     }
 
     async getList(ctx) {
-        return await listM.find({});
+        return await listM.find({}).exec();
     }
 
     async createList(ctx) {
@@ -17,6 +17,16 @@ class List {
 
         await listM.deleteOne({_id: data._id});
         await listM.create(ctx.request.body);
+        return {code: 1, data: 'success'};
+    }
+
+    async createEmptyData(ctx) {
+        const data = [];
+        const count = ctx.request.query.count;
+        for (let i=0; i<count; i++) {
+            data.push({name: ''});
+        }
+        await listM.create(data);
         return {code: 1, data: 'success'};
     }
 }
