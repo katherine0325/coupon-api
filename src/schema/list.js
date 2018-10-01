@@ -6,7 +6,7 @@ const listSchema = new mongoose.Schema({
     tao_token: String,
     coupon_tao_token: String,
     url: String,
-    image_url: String,
+    image_urls: Array,
     create_time: Date,
     update_time: Date,
 })
